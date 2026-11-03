@@ -72,7 +72,7 @@ export const weddingData = {
 
   // RSVP Details (Accept & Decline Scenarios)
   rsvp: {
-    whatsappNumber: "919778137459",
+    whatsappNumber: "918606362252",
     acceptMessage: "Hello Jishnu & Athira, we are delighted to attend your wedding celebration!🎉🤍",
     declineMessage: "Hello Jishnu & Athira, we won't be able to attend your wedding celebration, but our heartfelt blessings and warm wishes are with you both!🤍✨"
   },
