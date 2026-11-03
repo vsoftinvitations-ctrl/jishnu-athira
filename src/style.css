@@ -462,8 +462,16 @@ section {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
   animation: floatDownward 2.6s infinite ease-in-out;
+}
+
+.scroll-invitation-btn.dismissed-scroll-btn {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(16px) !important;
+  transition: opacity 0.4s ease, transform 0.4s ease !important;
+  animation: none !important;
 }
 
 .scroll-invitation-btn svg {

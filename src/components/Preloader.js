@@ -160,7 +160,7 @@ export function initPreloader() {
     }, 1850);
   }
 
-  // Click on "Tap to Open" button or anywhere on screen
+  // ONLY the "Tap to Open" button opens the invitation from the initial gate
   const enterBtn = document.getElementById('preloader-enter-btn');
   if (enterBtn) {
     enterBtn.addEventListener('click', (e) => {
@@ -169,14 +169,21 @@ export function initPreloader() {
     });
   }
 
+  // Once in revealing stage, tapping screen allows proceeding smoothly
   preloader.addEventListener('click', () => {
-    handleTapToOpen();
+    if (stage === 'revealing') {
+      dismissPreloader();
+    }
   });
 
-  // Also support keyboard Enter/Space/Escape
+  // Keyboard accessibility
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
-      handleTapToOpen();
+    if (stage === 'waiting' && (e.key === 'Enter' || e.key === ' ')) {
+      if (document.activeElement === enterBtn) {
+        handleTapToOpen();
+      }
+    } else if (stage === 'revealing' && (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ')) {
+      dismissPreloader();
     }
   });
 }

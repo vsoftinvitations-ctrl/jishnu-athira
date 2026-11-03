@@ -41,9 +41,9 @@ export function renderOpeningSection() {
           </div>
 
           <!-- Gentle Downward Scroll Trigger -->
-          <button class="scroll-invitation-btn" id="scroll-to-invitation" aria-label="Scroll to Invitation">
-            <span>Explore Invitation</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <button class="scroll-invitation-btn" id="scroll-to-invitation" aria-label="Scroll Down">
+            <span>Scroll Down</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
@@ -55,12 +55,33 @@ export function renderOpeningSection() {
 
 export function initOpeningInteractions() {
   const scrollBtn = document.getElementById('scroll-to-invitation');
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', () => {
-      const target = document.getElementById('getting-married') || document.getElementById('couple-introduction');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+  if (!scrollBtn) return;
+
+  let hasScrolled = false;
+
+  function dismissScrollBtn() {
+    if (hasScrolled) return;
+    hasScrolled = true;
+    scrollBtn.classList.add('dismissed-scroll-btn');
+    window.removeEventListener('scroll', handleScroll);
+    setTimeout(() => {
+      scrollBtn.style.display = 'none';
+    }, 400);
   }
+
+  function handleScroll() {
+    if (window.scrollY > 40) {
+      dismissScrollBtn();
+    }
+  }
+
+  scrollBtn.addEventListener('click', () => {
+    const target = document.getElementById('getting-married') || document.getElementById('couple-introduction');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    dismissScrollBtn();
+  });
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
 }
