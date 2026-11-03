@@ -12,10 +12,10 @@ export const weddingData = {
     image: "/assets/image2.png",
     bio: "Son of our esteemed family, blessed to begin this divine voyage of love, harmony, and togetherness.",
     parents: {
-      father: "Jayaraj U",
+      father: "Jayaraj U (Late)",
       fatherClean: "Jayaraj U",
-      fatherLate: false,
-      fatherDisplay: "Sri. Jayaraj U",
+      fatherLate: true,
+      fatherDisplay: "Sri. Jayaraj U (Late)",
       mother: "Baby Uma R",
       motherDisplay: "Smt. Baby Uma R",
       houseName: "Kripa House",
