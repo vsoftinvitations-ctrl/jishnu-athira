@@ -3,15 +3,15 @@ import { weddingData } from '../data/wedding-data.js';
 /**
  * Getting Married Section
  * Layout: Horizontal Split Card with Photographic Smooth Crossfade Slider
- * 1st image: /assets/image2.jpg
+ * 1st image: /assets/image2.png
  * 2nd image: /assets/image.png
  * 3rd image: /assets/image3.png
  */
 export function renderGettingMarriedSection() {
   const { bride, groom } = weddingData;
 
-  const brideDisplay = bride.shortName || 'Dr. Arunima';
-  const groomDisplay = groom.shortName || 'Abhijith';
+  const groomDisplay = groom.shortName || 'Jishnu';
+  const brideDisplay = bride.shortName || 'Athira';
 
   return `
     <section class="getting-married-section" id="getting-married">
@@ -20,22 +20,22 @@ export function renderGettingMarriedSection() {
           <!-- Left: Couple Portrait Crossfade Slider -->
           <div class="getting-married-media" id="getting-married-slider" role="region" aria-label="Couple Photos - Click to transition">
             <img
-              src="/assets/image2.jpg"
-              alt="${brideDisplay} &amp; ${groomDisplay} - Standing Portrait"
+              src="/assets/image2.png"
+              alt="${groomDisplay} &amp; ${brideDisplay} - Standing Portrait"
               class="getting-married-photo getting-married-slide active"
               data-slide="0"
               loading="eager"
             />
             <img
               src="/assets/image.png"
-              alt="${brideDisplay} &amp; ${groomDisplay} - Close-up Portrait"
+              alt="${groomDisplay} &amp; ${brideDisplay} - Close-up Portrait"
               class="getting-married-photo getting-married-slide"
               data-slide="1"
               loading="lazy"
             />
             <img
               src="/assets/image3.png"
-              alt="${brideDisplay} &amp; ${groomDisplay} - Together Portrait"
+              alt="${groomDisplay} &amp; ${brideDisplay} - Together Portrait"
               class="getting-married-photo getting-married-slide"
               data-slide="2"
               loading="lazy"
@@ -51,9 +51,9 @@ export function renderGettingMarriedSection() {
           <!-- Right: Text & Names -->
           <div class="getting-married-content">
             <span class="getting-married-subheading">ARE GETTING MARRIED</span>
-            <h2 class="getting-married-bride">${brideDisplay}</h2>
-            <span class="getting-married-ampersand">&amp;</span>
             <h2 class="getting-married-groom">${groomDisplay}</h2>
+            <span class="getting-married-ampersand">&amp;</span>
+            <h2 class="getting-married-bride">${brideDisplay}</h2>
           </div>
         </div>
       </div>

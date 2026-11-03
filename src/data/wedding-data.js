@@ -1,69 +1,80 @@
 /**
  * Wedding Digital Invitation Data Configuration (English Only)
- * Arunima & Abhijith Wedding Invitation
+ * Jishnu & Athira Wedding Invitation
  */
 
 export const weddingData = {
   // Couple Information
-  bride: {
-    name: "Dr. Arunima Madhu",
-    shortName: "Dr. Arunima",
-    qualifications: "",
-    image: "/assets/bride.jpg",
-    bio: "Daughter of our beloved family, embarking on a sacred new chapter of life with grace and devotion.",
-    parents: {
-      father: "Madhu T. S",
-      mother: "Reji Madhu",
-      houseName: "",
-      city: ""
-    },
-    siblingLabel: "Sister",
-    siblingsDisplay: "Athulya Madhu",
-    siblings: [
-      { name: "Athulya Madhu", relation: "Sister" }
-    ]
-  },
   groom: {
-    name: "Abhijith V Nair",
-    shortName: "Abhijith",
+    name: "Jishnu U",
+    shortName: "Jishnu",
     qualifications: "",
-    image: null,
+    image: "/assets/image2.png",
     bio: "Son of our esteemed family, blessed to begin this divine voyage of love, harmony, and togetherness.",
     parents: {
-      father: "Vinayachandran Nair",
-      mother: "Usha Vinayachandran",
-      houseName: "",
-      city: ""
+      father: "Jayaraj U",
+      fatherClean: "Jayaraj U",
+      fatherLate: false,
+      fatherDisplay: "Sri. Jayaraj U",
+      mother: "Baby Uma R",
+      motherDisplay: "Smt. Baby Uma R",
+      houseName: "Kripa House",
+      address: "Kripa House, Avileri Parambu, Vrindavan Colony, Chevayoor.",
+      city: "Chevayoor, Calicut"
     },
-    siblingLabel: "Brother of",
-    siblingsDisplay: "Aswathy, Rajagopal S. K",
-    siblings: [
-      { name: "Aswathy", relation: "Sister" },
-      { name: "Rajagopal S. K", relation: "Brother" }
-    ]
+    siblingLabel: "",
+    siblingsDisplay: "",
+    siblings: []
+  },
+  bride: {
+    name: "Athira P",
+    shortName: "Athira",
+    qualifications: "",
+    image: "/assets/image3.png",
+    bio: "Daughter of our beloved family, embarking on a sacred new chapter of life with grace and devotion.",
+    parents: {
+      father: "Balakrishnan P (Late)",
+      fatherClean: "Balakrishnan P",
+      fatherLate: true,
+      fatherDisplay: "Sri. Balakrishnan P (Late)",
+      mother: "Sujatha Balakrishnan",
+      motherDisplay: "Smt. Sujatha Balakrishnan",
+      houseName: "Pootheri House",
+      address: "Pootheri House, Muthanchalam Paramba, Kallithodi, Chungam, Feroke, Calicut.",
+      city: "Feroke, Calicut"
+    },
+    siblingLabel: "",
+    siblingsDisplay: "",
+    siblings: []
+  },
+
+  // Invitation From
+  invitationFrom: {
+    label: "Invitation From",
+    names: "Athulya, Sumesh and Family"
   },
 
   // Wedding Muhurtham & Event Details
   event: {
     muhurthamLabel: "Wedding Ceremony",
-    dateDisplay: "Saturday, 12 December 2026",
-    timeDisplay: "11:15 AM - 11:59 AM",
-    muhurthamTimeWindow: "Muhurtham: 11:15 AM - 11:59 AM",
-    venueName: "St. George Parish Hall",
-    venueAddress: "Pallikavala, Kattappana",
-    city: "Idukki, Kerala – 685515",
-    googleMapsUrl: "https://maps.app.goo.gl/HjW5yW56Rpsv89Q59?utm_source=chatgpt.com",
-    googleCalendarTitle: "Wedding of Arunima & Abhijith",
-    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding of Dr. Arunima Madhu & Abhijith V Nair at St. George Parish Hall, Kattappana, Idukki, Kerala.",
+    dateDisplay: "Sunday, 24 January 2027",
+    timeDisplay: "10:45 AM – 11:30 AM",
+    muhurthamTimeWindow: "Muhurtham: 10:45 AM – 11:30 AM",
+    venueName: "Mangalya Kalyana Mandapam & Auditorium",
+    venueAddress: "8/4, Chungam (Mottammal Road), Feroke",
+    city: "Calicut – 673631",
+    googleMapsUrl: "https://maps.app.goo.gl/yZFEZTFGCD7QxsT19?g_st=aw",
+    googleCalendarTitle: "Wedding of Jishnu & Athira",
+    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding of Jishnu U & Athira P at Mangalya Kalyana Mandapam & Auditorium, Feroke, Calicut.",
     // Target ISO date for the live countdown timer (YYYY-MM-DDTHH:mm:ss)
-    targetCountdownDate: "2026-12-12T11:15:00"
+    targetCountdownDate: "2027-01-24T10:45:00"
   },
 
   // RSVP Details (Accept & Decline Scenarios)
   rsvp: {
     whatsappNumber: "919778137459",
-    acceptMessage: "Hello Arunima & Abhijith, we are delighted to attend your wedding celebration!🎉🤍",
-    declineMessage: "Hello Arunima & Abhijith, we won't be able to attend your wedding celebration, but our heartfelt blessings and warm wishes are with you both!🤍✨"
+    acceptMessage: "Hello Jishnu & Athira, we are delighted to attend your wedding celebration!🎉🤍",
+    declineMessage: "Hello Jishnu & Athira, we won't be able to attend your wedding celebration, but our heartfelt blessings and warm wishes are with you both!🤍✨"
   },
 
   // Sacred Ceremonies Timeline
@@ -71,22 +82,22 @@ export const weddingData = {
     {
       id: "ceremony-1",
       englishTitle: "Guest Welcome & Gathering",
-      time: "10:30 AM",
+      time: "10:00 AM",
       description: "Auspicious arrival of family and guests to celebrate the special occasion.",
       icon: "ring"
     },
     {
       id: "ceremony-2",
       englishTitle: "Wedding Ceremony (Muhurtham)",
-      time: "11:15 AM - 11:59 AM",
+      time: "10:45 AM – 11:30 AM",
       description: "Sacred wedding ceremony, exchanging of garlands and marital vows in the presence of loved ones.",
       icon: "lamp"
     },
     {
       id: "ceremony-3",
       englishTitle: "Traditional Wedding Feast",
-      time: "01:00 PM onwards",
-      description: "Delicious grand traditional feast served to celebrate the joyful union of Arunima & Abhijith.",
+      time: "12:00 PM onwards",
+      description: "Delicious grand traditional feast served to celebrate the joyful union of Jishnu & Athira.",
       icon: "leaf"
     }
   ],
@@ -94,19 +105,19 @@ export const weddingData = {
   // Couple Photo Gallery
   galleryImages: [
     {
-      src: "/assets/couple.jpg",
-      alt: "Dr. Arunima Madhu & Abhijith V Nair",
+      src: "/assets/image3.png",
+      alt: "Jishnu U & Athira P - Together Portrait",
+      caption: "Moments captured along our path to forever"
+    },
+    {
+      src: "/assets/image.png",
+      alt: "Jishnu U & Athira P - Close-up Portrait",
+      caption: "Two souls bound by love and timeless tradition"
+    },
+    {
+      src: "/assets/image2.png",
+      alt: "Jishnu U & Athira P - Standing Portrait",
       caption: "A journey of eternal companionship"
-    },
-    {
-      src: "/assets/bride.jpg",
-      alt: "Radiant Bride Dr. Arunima Madhu",
-      caption: "Radiant bride adorned in traditional Kerala Kasavu"
-    },
-    {
-      src: "/assets/details.jpg",
-      alt: "Sacred traditional wedding offerings",
-      caption: "Sacred rituals & auspicious beginnings"
     }
   ],
 

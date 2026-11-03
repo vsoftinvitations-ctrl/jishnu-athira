@@ -1262,17 +1262,65 @@ section {
   letter-spacing: 0.01em;
 }
 
+.family-address-block {
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+  max-width: 320px;
+}
+
+.family-address-text {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--earth-brown-muted);
+  line-height: 1.5;
+  display: block;
+}
+
+.invitation-from-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.invitation-from-card {
+  max-width: 500px;
+  width: 100%;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invitation-from-names {
+  font-family: var(--font-serif-en);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--earth-brown);
+  letter-spacing: 0.02em;
+  margin-top: 0.25rem;
+}
+
 /* ==========================================================================
    7. SECTION 7 — WEDDING COUNTDOWN
    ========================================================================== */
 .countdown-section {
   text-align: center;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .countdown-card,
 .countdown-section .kasavu-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(1.75rem, 4vw, 3rem) clamp(0.75rem, 3vw, 2.5rem);
   border: 1.5px solid #7A1C2E;
   box-shadow: 0 12px 36px rgba(122, 28, 46, 0.1), 0 4px 14px rgba(61, 42, 27, 0.05);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .countdown-heading {
@@ -1280,48 +1328,109 @@ section {
   font-size: clamp(1.3rem, 3.2vw, 1.8rem);
   font-style: italic;
   color: var(--earth-brown);
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
 .countdown-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(0.75rem, 3vw, 2.5rem);
-  max-width: 600px;
+  gap: clamp(0.35rem, 1.8vw, 1.75rem);
+  width: 100%;
+  max-width: 580px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .countdown-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 65px;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: clamp(0.45rem, 1.2vw, 0.85rem) clamp(0.2rem, 0.8vw, 0.6rem);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(184, 155, 94, 0.22);
+  box-sizing: border-box;
 }
 
 .countdown-number {
   font-family: var(--font-serif-en);
-  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-size: clamp(1.35rem, 4.5vw, 2.6rem);
   font-weight: 600;
   color: var(--earth-brown);
-  line-height: 1;
-  margin-bottom: 0.35rem;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .countdown-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
+  font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+  letter-spacing: clamp(0.04em, 0.15vw, 0.12em);
   text-transform: uppercase;
   color: var(--gold-deep);
   font-family: var(--font-serif-en);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .countdown-separator {
   font-family: var(--font-serif-en);
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
   color: var(--gold-antique);
   opacity: 0.6;
-  margin-top: -1.2rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin: 0;
+  margin-top: -0.65rem;
+  user-select: none;
+}
+
+@media (max-width: 480px) {
+  .countdown-card,
+  .countdown-section .kasavu-card {
+    padding: 1.5rem 0.6rem;
+  }
+  .countdown-grid {
+    gap: 0.2rem;
+  }
+  .countdown-box {
+    padding: 0.4rem 0.15rem;
+    border-radius: 6px;
+  }
+  .countdown-number {
+    font-size: clamp(1.2rem, 5vw, 1.55rem);
+    margin-bottom: 0.15rem;
+  }
+  .countdown-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+  }
+  .countdown-separator {
+    font-size: 0.95rem;
+    margin-top: -0.45rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .countdown-separator {
+    display: none;
+  }
+  .countdown-grid {
+    gap: 0.3rem;
+  }
+  .countdown-number {
+    font-size: 1.15rem;
+  }
+  .countdown-label {
+    font-size: 0.52rem;
+  }
 }
 
 /* ==========================================================================
@@ -2368,7 +2477,7 @@ section {
 /* ==========================================================================
    WEDDING PRELOADER — BRITTANY SIGNATURE HANDWRITING ANIMATION
    Background: /assets/preloder.png
-   Center: Arunima & Abhijith with real-time calligraphy ink stroke animation
+   Center: Jishnu & Athira with real-time calligraphy ink stroke animation
    ========================================================================== */
 
 body.preloader-active {
@@ -2614,7 +2723,11 @@ body.preloader-active #app>*:not(#wedding-preloader) {
 .script-rahul,
 .script-anjana,
 .script-arunima,
-.script-abhijith {
+.script-abhijith,
+.script-jishnu,
+.script-athira,
+.script-line-1,
+.script-line-2 {
   margin: 0.05em 0;
 }
 
@@ -2637,7 +2750,11 @@ body.preloader-active #app>*:not(#wedding-preloader) {
 .script-rahul .script-text,
 .script-anjana .script-text,
 .script-arunima .script-text,
-.script-abhijith .script-text {
+.script-abhijith .script-text,
+.script-jishnu .script-text,
+.script-athira .script-text,
+.script-line-1 .script-text,
+.script-line-2 .script-text {
   font-size: clamp(3.2rem, 13vw, 5.6rem);
   clip-path: inset(-60px 105% -60px -60px);
   opacity: 0;
@@ -2659,9 +2776,11 @@ body.preloader-active #app>*:not(#wedding-preloader) {
 }
 
 /* Handwriting Keyframe Animations — leisurely, graceful pacing */
-/* Line 1: Arunima / Rahul (1.7s duration starting at 0.6s) */
+/* Line 1: Jishnu / Arunima / Rahul (1.7s duration starting at 0.6s) */
 .preloader-animating .script-rahul .script-text,
-.preloader-animating .script-arunima .script-text {
+.preloader-animating .script-arunima .script-text,
+.preloader-animating .script-jishnu .script-text,
+.preloader-animating .script-line-1 .script-text {
   animation: writeName1 1.7s cubic-bezier(0.35, 0, 0.25, 1) 0.6s forwards;
 }
 
@@ -2699,9 +2818,11 @@ body.preloader-active #app>*:not(#wedding-preloader) {
   }
 }
 
-/* Line 3: Abhijith / Anjana (1.8s duration starting at 2.9s) */
+/* Line 3: Athira / Abhijith / Anjana (1.8s duration starting at 2.9s) */
 .preloader-animating .script-anjana .script-text,
-.preloader-animating .script-abhijith .script-text {
+.preloader-animating .script-abhijith .script-text,
+.preloader-animating .script-athira .script-text,
+.preloader-animating .script-line-2 .script-text {
   animation: writeName2 1.8s cubic-bezier(0.35, 0, 0.25, 1) 2.9s forwards;
 }
 
@@ -2737,7 +2858,9 @@ body.preloader-active #app>*:not(#wedding-preloader) {
 }
 
 .preloader-animating .script-rahul .calligraphy-pen-spark,
-.preloader-animating .script-arunima .calligraphy-pen-spark {
+.preloader-animating .script-arunima .calligraphy-pen-spark,
+.preloader-animating .script-jishnu .calligraphy-pen-spark,
+.preloader-animating .script-line-1 .calligraphy-pen-spark {
   animation: sparkMoveLine1 1.7s cubic-bezier(0.35, 0, 0.25, 1) 0.6s forwards;
 }
 
@@ -2767,7 +2890,9 @@ body.preloader-active #app>*:not(#wedding-preloader) {
 }
 
 .preloader-animating .script-anjana .calligraphy-pen-spark,
-.preloader-animating .script-abhijith .calligraphy-pen-spark {
+.preloader-animating .script-abhijith .calligraphy-pen-spark,
+.preloader-animating .script-athira .calligraphy-pen-spark,
+.preloader-animating .script-line-2 .calligraphy-pen-spark {
   animation: sparkMoveLine2 1.8s cubic-bezier(0.35, 0, 0.25, 1) 2.9s forwards;
 }
 
@@ -2830,7 +2955,11 @@ body.preloader-active #app>*:not(#wedding-preloader) {
 .preloader-script-container.shimmer-active .script-rahul .script-text,
 .preloader-script-container.shimmer-active .script-anjana .script-text,
 .preloader-script-container.shimmer-active .script-arunima .script-text,
-.preloader-script-container.shimmer-active .script-abhijith .script-text {
+.preloader-script-container.shimmer-active .script-abhijith .script-text,
+.preloader-script-container.shimmer-active .script-jishnu .script-text,
+.preloader-script-container.shimmer-active .script-athira .script-text,
+.preloader-script-container.shimmer-active .script-line-1 .script-text,
+.preloader-script-container.shimmer-active .script-line-2 .script-text {
   clip-path: none !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -2963,54 +3092,11 @@ body.preloader-active #app>*:not(#wedding-preloader) {
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(218, 165, 32, 0.35);
   transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-  animation: pulseOpenBtn 2.2s ease-in-out infinite alternate;
 }
 
 .preloader-open-pill-btn:hover,
 .preloader-open-pill-btn:active {
   background: rgba(255, 255, 255, 0.22);
   border-color: rgba(255, 235, 170, 0.85);
-  transform: scale(1.05);
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45), 0 0 20px rgba(235, 205, 130, 0.55);
-}
-
-.btn-sparkle {
-  font-size: 0.65rem;
-  color: var(--gold-light);
-  line-height: 1;
-}
-
-@keyframes pulseOpenBtn {
-  0% {
-    transform: scale(0.98);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 10px rgba(218, 165, 32, 0.2);
-    border-color: rgba(223, 202, 149, 0.4);
-  }
-
-  100% {
-    transform: scale(1.03);
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4), 0 0 18px rgba(235, 205, 130, 0.5);
-    border-color: rgba(255, 235, 170, 0.75);
-  }
-}
-
-.preloader-open-pill-btn.ready-pulse {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 235, 170, 0.85);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), 0 0 20px rgba(235, 205, 130, 0.65);
-  animation: pulseOpenBtnReady 1.8s ease-in-out infinite alternate;
-}
-
-@keyframes pulseOpenBtnReady {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 14px rgba(218, 165, 32, 0.35);
-    border-color: rgba(223, 202, 149, 0.6);
-  }
-
-  100% {
-    transform: scale(1.06);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 26px rgba(255, 235, 170, 0.85);
-    border-color: rgba(255, 245, 200, 1);
-  }
 }

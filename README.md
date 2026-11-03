@@ -1,4 +1,3 @@
-# Arunima & Abhijith
+# Jishnu & Athira
 
-Wedding Digital Invitation website for Dr. Arunima Madhu & Abhijith V Nair.
-
+Wedding Digital Invitation website for Jishnu U & Athira P.
