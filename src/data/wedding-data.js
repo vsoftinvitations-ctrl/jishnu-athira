@@ -51,7 +51,7 @@ export const weddingData = {
   // Invitation From
   invitationFrom: {
     label: "Invitation From",
-    names: "Athulya, Sumesh and Family"
+    names: "Ayush, Athulya, Sumesh and Family Members"
   },
 
   // Wedding Muhurtham & Event Details
